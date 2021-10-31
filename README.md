@@ -1,6 +1,5 @@
 ## Exemple Spring Boot @DataJpaTest pour le test unitaire
-De nos jours, les tests unitaires sont si importants dans le développement de logiciels, et Spring Framework fournit 
-également des annotations `@DataJpaTest` pour simplifier l'écriture des tests pour le référentiel JPA. <br/>
+De nos jours, les tests unitaires sont si importants dans le développement de logiciels, et Spring Framework fournit également des annotations `@DataJpaTest` pour simplifier l'écriture des tests pour le référentiel JPA. <br/>
 Dans ce projet, nous allons voir comment appliquer `@DataJpaTest` dans notre project Spring Boot avec `TestEntityManager`.
 
 ### Prérequis
@@ -47,8 +46,7 @@ class YourRepositoryTests {
 ```
 
 **TestEntityManager**
-Le but de l'`EntityManager` est d'interagir avec le contexte de persistance. Spring Data JPA vous extrait de EntityManager 
-via les interfaces de référentiel. Et TestEntityManager nous permet d'utiliser EntityManager dans les tests.
+Le but de l'`EntityManager` est d'interagir avec le contexte de persistance. Spring Data JPA vous extrait de EntityManager via les interfaces de référentiel. Et TestEntityManager nous permet d'utiliser EntityManager dans les tests.
 
 ### Dependances Maven
 ---
@@ -62,7 +60,7 @@ Dans ce tuto nous allons utiliser les dependances Maven suivants:
 ---
 Les exigences fonctionnelles permettent de satisfaire les besoins fonctionnels (metier) de l'entreprise.
 L'application doit permettre de :
-- Gérer les tests de l'entité `tutoriel` :
+- Tester les opérations CRUD et des méthodes personnalisés de l'entité `tutoriel` :
 	* Ne devrait trouver aucun tutoriel si le référentiel est vide
 	* Devrait stocker un tutoriel
 	* Devrait trouver tous les tutoriels
@@ -75,17 +73,17 @@ L'application doit permettre de :
 
 ### Exécuter le test unitaire
 ---
-Pour tester Lancer l'application :
-– Première commande d'exécution : `mvn clean install`.
-– Ensuite, lancez Test : `mvn test`
-	<capture console>
+Pour tester le test unitaire, lancer l'application :
+* Première commande d'exécution : `mvn clean install`.
+* Ensuite, lancez Test : `mvn test`
+<br/><br/>
+![mvn test](https://user-images.githubusercontent.com/75081354/139573681-14285bc0-f2cd-4a7e-ab9b-29267d2759c0.PNG)
 
 – Ou vous pouvez également exécuter le projet Spring Boot avec le mode JUnit Test.
 – Maintenant, voyez le résultat Junit comme suit :
-	<screenshot méthode>
+<br/><br/>
+![run test](https://user-images.githubusercontent.com/75081354/139573691-8e09c8ac-b215-4c01-a59c-69ded595c72b.PNG)
 
 ### Conclusion
 ---
-Aujourd'hui, nous avons créé Spring Boot Test pour le référentiel JPA avec la base de données H2 en utilisant 
-`@DataJPATest` et `TestEntityManager` avec la base de données H2. Nous exécutons également des tests unitaires 
-pour de nombreuses opérations CRUD et méthodes de recherche personnalisées.
+Aujourd'hui, nous avons créé Spring Boot Test pour le référentiel JPA avec la base de données H2 en utilisant `@DataJPATest` et `TestEntityManager` avec la base de données H2. Nous exécutons également des tests unitaires pour de nombreuses opérations CRUD et méthodes de recherche personnalisées.
